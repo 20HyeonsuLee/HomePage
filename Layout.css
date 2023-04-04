@@ -1,0 +1,7 @@
+.container {
+  display: grid;
+  grid-template-columns: 110px 1fr 1fr 1fr;
+  gap: 10px 10px;
+  place-content: center center;
+  grid-auto-flow: column dense;
+}
