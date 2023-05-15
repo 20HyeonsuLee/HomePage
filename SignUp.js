@@ -1,3 +1,42 @@
+const info = [
+  {
+    name: "기계공학부",
+    dept_nums: ["20"],
+  },
+  {
+    name: "산업경영학부",
+    dept_nums: ["80"],
+  },
+  {
+    name: "컴퓨터공학부",
+    dept_nums: ["35", "36"],
+  },
+  {
+    name: "메카트로닉스공학부",
+    dept_nums: ["40"],
+  },
+  {
+    name: "고용서비스정책학과",
+    dept_nums: ["85"],
+  },
+  {
+    name: "디자인공학부",
+    dept_nums: ["51"],
+  },
+  {
+    name: "에너지신소재화학공학부",
+    dept_nums: ["74"],
+  },
+  {
+    name: "전기전자통신공학부",
+    dept_nums: ["61"],
+  },
+  {
+    name: "건축공학부",
+    dept_nums: ["72"],
+  },
+];
+
 let SignUpButton = document.getElementById("SignUpButton");
 let CancelButton = document.getElementById("CancelButton");
 let id = document.getElementById("id");
@@ -15,7 +54,7 @@ const regexPhoneNumber = (target) => {
 };
 
 function reset(msg, component) {
-  alert("메일 형식을 확인해주세요.");
+  alert(msg);
   component.value = "";
   component.focus();
 }
@@ -42,9 +81,7 @@ student_number.addEventListener("change", function () {
   } else {
     let str = String(student_number.value).substring(5, 7);
 
-    let data = JSON.parse(JSON.stringify(info));
-
-    let majorData = data.find((v) => v.dept_nums.includes(str));
+    let majorData = info.find((v) => v.dept_nums.includes(str));
 
     if (majorData === undefined) {
       reset("학번 형식을 확인해주세요.", student_number);
