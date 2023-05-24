@@ -8,3 +8,5 @@ let f = async () => {
 };
 
 f();
+
+document.cookie = "user=1234";
